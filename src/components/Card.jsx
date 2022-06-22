@@ -11,41 +11,20 @@ function handleOnClose() {
   var url= `http://openweathermap.org/img/wn/${img}@2x.png`
   return<div>
 
-    <button onClick={handleOnClose}>X</button>
-    <span>{name}</span>
-    <CardTemp label='Min' value={min}/>
-    <CardTemp label='Max' value={max}/>
-    <img src={url} alt='Icono del clima'/>
-
-
-
+      <button onClick={handleOnClose}>X</button>
+      <img src={url} alt='Icono del clima'/>
+      <span>{descr}</span>
+      <span>{name}</span>
+      <CardTemp label='Min' value={min}/>
+      <CardTemp label='Max' value={max}/>
+      <div>
+      <CardTemp label='Wind Flow' img='https://res.cloudinary.com/dvkvyi1dr/image/upload/c_scale,h_58/v1655851843/weather%20api/clouds_wl5s4i.jpg' value={wind}/>
+      <CardTemp label='Cloudiness' img='https://res.cloudinary.com/dvkvyi1dr/image/upload/c_scale,h_56/v1655852419/weather%20api/nubosidad_vdolvy.jpg' value={cloud}/>
+      <CardTemp label='Humidity' img='https://res.cloudinary.com/dvkvyi1dr/image/upload/c_scale,h_76/v1655852419/weather%20api/humedad_gbzxvi.jpg' value={humidity}/>
+      </div>
+  
   </div>
-  
-  
-  /*<div>
-    <button onClick={onClose}>X</button>
-    <table>
-      <thead>
-        <tr>
-          <th>
-          {name}
-          </th> 
-        </tr>
-      </thead>
-      <tbody>
-      <tr>
-          <th>Min</th>
-          <th>Max</th>
-          <th><img src={url} alt='Icono del clima' /></th>
-        </tr>
-        <tr>
-          <th>{min}</th>
-          <th>{max}</th>
-          <th></th>
-        </tr>
-      </tbody>  
-    </table>
-  </div>*/
+
   
 };
 

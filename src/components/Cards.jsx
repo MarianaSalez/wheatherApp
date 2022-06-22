@@ -11,9 +11,13 @@ export default function Cards({cities}) {
     key={city.id}
     max={city.main.temp_max}
     min={city.main.temp_min}
+    descr={city.weather.description}
     name={city.name}
     img={city.weather[0].icon}
-    onClose={() => alert(city.name)}>
+    onClose={() => alert(city.name)}
+    wind={city.wind.speed}
+    cloud={city.clouds.all}
+    humidity={city.main.humidity}>
     </Card>
     )}
     </div>
