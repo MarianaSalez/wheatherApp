@@ -1,7 +1,7 @@
 import React from 'react';
 import CardTemp from './CardTemp';
 
-export default function Card({max, min, name, img, onClose}) {
+export default function Card({max, min,descr, name, img, onClose, wind, cloud, humidity}) {
   // acá va tu código
 function handleOnClose() {
   if(typeof onClose==='function') onClose();

@@ -1,4 +1,4 @@
-export default function CardTemp({label, value}) {
+export default function CardTemp({label, value, img}) {
     return(
       <div>
         {img?
