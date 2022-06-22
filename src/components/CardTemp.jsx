@@ -1,14 +1,14 @@
-export default function CardTemp({label, value, img}) {
+export default function CardTemp({label, value, img,style}) {
     return(
       <div>
         {img?
-        <div>
-          <img src={img}/>
+        <div className={style}>
+          <img src={img} alt='imagen label'/>
           <label >{label}</label>
           <span>{value}</span>
         </div>
         :
-        <div>
+        <div className={style}>
           <label >{label}</label>
           <span>{value}</span>
         </div>

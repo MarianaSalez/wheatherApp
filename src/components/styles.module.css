@@ -1,0 +1,83 @@
+
+:root{
+    /*Variables de colores*/
+
+    --color-hot:crimson;
+    --color-cold:#219ebc;
+    --color-normal: #1d3557;
+   /* --color-border-card:#e7d3d3;*/
+
+    /*Paleta de coolors*/
+    --color-close: #22223b;
+    --color-border-card: #4a4e69;
+    --color-normal: #9a8c98;
+    --color-header: #c9ada7;
+    --color-title: #f2e9e4;
+    
+}
+
+
+.card{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    border-style: solid;
+    border-color: var(--color-border-card);
+    border-radius: 0.2em;
+    margin: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color-normal);
+}
+
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: baseline;
+  
+}
+
+.card_max{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-hot);
+}
+
+.card_min{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    color: var(--color-cold);
+}
+
+.card_img{
+   width: 12em;
+   height: 10em;
+   align-self: center;
+}
+
+.card_img_prop{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    padding: 5px;
+    align-self: center;
+ }
+
+ .card_title{
+    background-color: var(--color-header);
+    color: var(--color-title);
+    font-size:15pt;
+    margin: 0px;
+    padding: 5px;
+ }
+
+ .card_btn{
+    background-color: var(--color-close);
+    color: var(--color-header);
+ }
+

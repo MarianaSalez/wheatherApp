@@ -1,34 +1,13 @@
 import React from 'react';
 import './App.css';
-import Card from './components/Card.jsx';
-import Cards from './components/Cards.jsx';
+import Cards from './components/Cards.js';
 import SearchBar from './components/SearchBar.jsx';
-import data, { Cairns } from './data.js';
+import data from './data.js';
+
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <Card
-          key={Cairns.name}
-          max={Cairns.main.temp_max}
-          min={Cairns.main.temp_min}
-          descr={Cairns.weather.description}
-          name={Cairns.name}
-          img={Cairns.weather[0].icon}
-          onClose={() => alert(Cairns.name)}
-          wind={Cairns.wind.speed}
-          cloud={Cairns.clouds.all}
-          humidity={Cairns.main.humidity}
-        />
-      </div>
-      <hr />
-      <div>
-        <Cards
-          cities={data}
-        />
-      </div>
-      <hr />
       <div>
         <SearchBar
           onSearch={(ciudad) =>
@@ -36,6 +15,14 @@ function App() {
             }
         />
       </div>
+      <hr />
+      <div>
+        <Cards 
+          cities={data}
+        />
+      </div>
+  
+      
     </div>
   );
 }
