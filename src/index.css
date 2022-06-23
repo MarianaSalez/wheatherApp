@@ -1,10 +1,21 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://res.cloudinary.com/dvkvyi1dr/image/upload/v1656021666/weather%20api/fondo_khpfa1.avif) ;
+  background-size: cover;
+}
+
+.header{
+  /*background-color:#22223b ;*/
+  backdrop-filter: blur(10px);
+  color: #f2e9e4;
+  height: 5em;
+  font-size: 1.5em;
+  text-align: center;
+  align-self: center;
+  font-style: italic;
 }
 
 code {

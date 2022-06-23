@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #eaf4f4 ;
+  background-image: url(https://res.cloudinary.com/dvkvyi1dr/image/upload/v1656021666/weather%20api/fondo_khpfa1.avif) ;
+  background-size: cover;
 }
 
 .App-logo {

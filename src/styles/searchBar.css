@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6em;
-    font-size: larger;
+    height: 2em;
+    padding-top: 15px;
+    font-size: 1em;
     
 }
 
