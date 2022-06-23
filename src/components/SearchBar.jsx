@@ -1,7 +1,9 @@
 
 import React from 'react';
+import '../styles/searchBar.css'
 
-export default function SearchBar({onSearch}) {
+
+export default function SearchBar({onSearch, icon}) {
   // acá va tu código
 
   function handleOnSearch() {
@@ -12,10 +14,12 @@ export default function SearchBar({onSearch}) {
     
   }
   //var city= document.getElementById('inputCity').val()
-  return <div>
-    <input type='text' id='inputCity' placeholder='Ciudad...' >
+  return <div className='searchBar'>
+    <input className='search_input' type='text' id='inputCity' placeholder='Ciudad...' >
     </input>
-    <button onClick={handleOnSearch} > Agregar</button>
+    <button className='btn_search' onClick={handleOnSearch} > 
+    {icon&&<div className='icon'>{icon}</div>}
+    Agregar</button>
     
     </div>
 };

@@ -1,0 +1,30 @@
+.searchBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6em;
+    font-size: larger;
+    
+}
+
+.btn_search{
+    background-color: var(--color-header); 
+    color: var(--color-close);
+    display: flex;
+    cursor: pointer;
+    margin: 0px 5px;
+    border-radius: 15px;
+}
+
+.btn_search:hover{
+    background-color: var(--color-title) ;
+}
+
+.search_input{
+    border-radius: 7px;
+    border-color: var(--color-normal);
+}
+
+.icon{
+    margin-right: 5px;
+}
