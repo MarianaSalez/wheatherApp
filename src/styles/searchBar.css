@@ -4,7 +4,7 @@
     justify-content: center;
     height: 2em;
     padding-top: 15px;
-    font-size: 1em;
+    font-size: 1.3rem;
     
 }
 
@@ -29,3 +29,15 @@
 .icon{
     margin-right: 5px;
 }
+
+  .NavBar{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: fit-content;
+    align-items:baseline;
+    backdrop-filter: blur(10px);
+    color: var(--color-close);
+    font-size: 0.9em;
+    margin: 5px
+  }
