@@ -6,7 +6,7 @@ import {FaSearchLocation} from 'react-icons/fa'
 
 
 
-function Nav(onSearch) {
+function Nav({onSearch}) {
     return (
         <div className='NavBar'>
             <div>
