@@ -56,7 +56,8 @@ function handleOnClose() {
   </div>
 
   : <div className={style.card}>
-      <h1 className={style.card_title}>{name}</h1>
+    <button className={style.card_btn} onClick={handleOnClose}>X</button>
+      
       <img src={url} alt='Icono del clima' className={style.card_img}/>
       <span>{descr}</span>
       
@@ -64,7 +65,7 @@ function handleOnClose() {
       <CardTemp  label='Max' value={max} style={style.card_max}/>
       <CardTemp label='Min' value={min} style={style.card_min}/>
       </div>
-      <button className={style.card_btn} onClick={handleOnClose}>X</button>
+      <h1 className={style.card_title}>{name}</h1>
   
   </div>
   

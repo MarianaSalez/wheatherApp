@@ -3,23 +3,25 @@ import Card from './Card';
 import  PropTypes from 'prop-types';
 import style from '../components/styles.module.css';
 
-export default function Cards({cities}) {
+export default function Cards({cities, onClose}) {
   // acá va tu código
   // tip, podés usar un map
-  return <div className={style.cards} style={{display: 'flex'}}>
+  return (cities.length===0)?
+  <div></div>:
+  <div className={style.cards} style={{display: 'flex'}}>
     {cities.map((city)=>
     <Card 
     key={city.id}
     max={city.max}
     min={city.min}
-    descr={city.weather[0].description}
+    descr={city.descr}
     name={city.name}
     img={city.img}
     //wind={city.wind}
     //cloud={city.clouds}
     //humidity={city.humidity}
     
-    onClose={() => alert(city.name)}>
+    onClose={()=>onClose(city.id)}>
     </Card>
     )}
     </div>

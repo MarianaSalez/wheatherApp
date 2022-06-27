@@ -4,9 +4,10 @@ import Cards from './components/Cards.js';
 import Nav from './components/Nav';
 import {useState} from 'react'
 import Card from './components/Card';
+ 
 
 
-const ky='90411983104347c80140c63d31b5e8f3'
+const API_KEY=process.env.REACT_APP_API_KEY;
 //process.env.REACT_APP_API_KEY;
 
 
@@ -15,13 +16,23 @@ function App() {
   const [cities, setCities] = useState([]);
   const [city, setCity] = useState({})
 
+  function handleAddCity(city){
+    setCities((prevCities)=>{return[city,...prevCities]})
+  }
+
+  function handleRemoveCity(cityId){
+    setCities((prevCities)=>{
+      return prevCities.filter((city)=>{return cityId !== city.id})
+    })
+  }
+
 
   function onSearch(ciudad){
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${ky}&units=metric`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&units=metric`)
     .then(r => r.json())
     .then((recurso) => {
       if(recurso.main !== undefined){
-        setCity({
+        setCity(()=>{return{
           min: Math.round(recurso.main.temp_min),
           max: Math.round(recurso.main.temp_max),
           img: recurso.weather[0].icon,
@@ -35,15 +46,15 @@ function App() {
           humidity:recurso.main.humidity,
           latitud: recurso.coord.lat,
           longitud: recurso.coord.lon
-        }); 
-        if(cities.includes(city)) deleteRepeat(city,cities)
+        }}); 
+        /*if(cities.includes(city)) deleteRepeat(city,cities)
       
         if (cities.length===5) {
-          setCities(cities.shift())
-        }
-        setCities(
-          oldCities => [...oldCities, city]);
+          setCities((prevCities)=>{return prevCities.shift()})
+        }*/
+        handleAddCity(city)
         console.log(cities)
+      
       } else {
         alert("Ciudad no encontrada");
       }
@@ -65,12 +76,12 @@ function App() {
       <div>
         <Card
         city={city}
-        onClose={() => alert(city.name)}/>
+        onClose={handleRemoveCity}/>
       </div>
       <div>
-        <Cards 
-          cities={cities}
-        />
+        {/*<Cards 
+          cities={cities.pop() onClose={handleRemoveCity}}
+  />*/}
       </div>
   
       
