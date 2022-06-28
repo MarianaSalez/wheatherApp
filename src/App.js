@@ -17,7 +17,16 @@ function App() {
   const [city, setCity] = useState({})
 
   function handleAddCity(city){
-    setCities((prevCities)=>{return[city,...prevCities]})
+    if (cities.includes(city)) {
+      var idx=cities.findIndex(city)
+    setCities(cities.splice(idx,1))
+      
+    }
+    else{
+      setCities((prevCities)=>{return[city,...prevCities]})
+    }
+
+
   }
 
   function handleRemoveCity(cityId){
@@ -26,13 +35,21 @@ function App() {
     })
   }
 
+  function upDateLastCity(city) {
+    setCity((prevcity)=>{
+      prevcity=city
+      return prevcity
+    }
+    )
+  }
+
 
   function onSearch(ciudad){
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&units=metric`)
     .then(r => r.json())
     .then((recurso) => {
       if(recurso.main !== undefined){
-        setCity(()=>{return{
+        const ciudad = {
           min: Math.round(recurso.main.temp_min),
           max: Math.round(recurso.main.temp_max),
           img: recurso.weather[0].icon,
@@ -46,14 +63,14 @@ function App() {
           humidity:recurso.main.humidity,
           latitud: recurso.coord.lat,
           longitud: recurso.coord.lon
-        }}); 
+        }; 
         /*if(cities.includes(city)) deleteRepeat(city,cities)
       
         if (cities.length===5) {
           setCities((prevCities)=>{return prevCities.shift()})
         }*/
-        handleAddCity(city)
-        console.log(cities)
+        handleAddCity(ciudad)
+        upDateLastCity(ciudad)
       
       } else {
         alert("Ciudad no encontrada");
@@ -61,31 +78,52 @@ function App() {
     });
   }
 
-  function deleteRepeat(city, cities) {
+ /* function deleteRepeat(city, cities) {
     var idx=cities.findIndex(city)
     setCities(cities.splice(idx,1))
-  }
+  }*/
 
 
-  return (
-    <div className="App">
-      <div className='Navbar'>
-        <Nav onSearch={onSearch} />
-      </div>
+  return ((Object.keys(city).length===0)?
+  <div className="App">
+  <div className='Navbar'>
+    <Nav onSearch={onSearch} />
+  </div>
+  <div>
+    <p> Ingrese localidad buscada</p>
+  </div>
+  </div>
+  :<div className="App">
+  <div className='Navbar'>
+    <Nav onSearch={onSearch} />
+  </div>
+  <div>
+    <Card key={city.id}
+    id={city.id}
+    max={city.max}
+    min={city.min}
+    descr={city.descr}
+    name={city.name}
+    img={city.img}
+    wind={city.wind}
+    cloud={city.clouds}
+    humidity={city.humidity}
 
-      <div>
-        <Card
-        city={city}
-        onClose={handleRemoveCity}/>
-      </div>
-      <div>
-        {/*<Cards 
-          cities={cities.pop() onClose={handleRemoveCity}}
-  />*/}
-      </div>
+onClose={handleRemoveCity}/>
+  </div>
+
+
+  <div>
+  <Cards 
+      cities={cities.filter((ciudad)=>{return city.id !== ciudad.id})} onClose={handleRemoveCity}
+/>
+  </div>
+
   
-      
-    </div>
+</div>
+  
+  
+  
   );
 }
 

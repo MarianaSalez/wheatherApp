@@ -5,31 +5,16 @@ import style from '../components/styles.module.css'
 
 
 
-export default function Card({city, onClose}) {
+export default function Card({
+  id, max, min, descr,name,img,wind,cloud,humidity,onClose}) {
   // acá va tu código
-
-if (Object.keys(city).length===0) {
-  console.log('entre aca')
-   //en Caso que no exista nada
-  return <h2>Ingrese una ubicacion para conocer el clima</h2>
-}
-else{
-
-  //variables y funciones
-  var max=city.max
-  var min=city.min
-  var descr=city.descr
-  var name=city.name
-  var img=city.img
-  var wind=city.wind
-  var cloud=city.clouds
-  var humidity=city.humidity
 
 
 function handleOnClose() {
-  if(typeof onClose==='function') onClose()
+  if(typeof onClose==='function') onClose(id)
   
 }
+
 
   var url= `http://openweathermap.org/img/wn/${img}@2x.png`
 
@@ -73,7 +58,7 @@ function handleOnClose() {
 
 
 
-}
+
 
   
 

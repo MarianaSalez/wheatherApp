@@ -6,20 +6,22 @@ import '../styles/searchBar.css'
 export default function SearchBar({onSearch, icon}) {
   // acá va tu código
 
-  function handleOnSearch() {
+  function handleOnSearch(event) {
+    event.preventDefault()
+
     if(typeof onSearch==='function'){
       const input=document.getElementById('inputCity')
       onSearch(input.value)
-      input.innerHTML=''
+      input.value=''
     }
   }
 
   //var city= document.getElementById('inputCity').val()
-  return <div className='searchBar'>
+  return <form className='searchBar' onSubmit={handleOnSearch}>
     <input className='search_input' type='text' id='inputCity' placeholder='Ciudad...'/>
-    <button  className='btn_search' onClick={handleOnSearch} > 
+    <button  className='btn_search' type='submit' > 
     {icon&&<div className='icon'>{icon}</div>}
     Agregar</button>
     
-    </div>
+    </form>
 };
