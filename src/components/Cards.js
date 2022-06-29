@@ -18,9 +18,9 @@ export default function Cards({cities, onClose}) {
     descr={city.descr}
     name={city.name}
     img={city.img}
-    //wind={city.wind}
-    //cloud={city.clouds}
-    //humidity={city.humidity}
+    wind={city.wind}
+    cloud={city.clouds}
+    humidity={city.humidity}
     
     onClose={()=>onClose(city.id)}>
     </Card>

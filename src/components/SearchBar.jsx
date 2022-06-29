@@ -22,6 +22,6 @@ export default function SearchBar({onSearch, icon}) {
     <button  className='btn_search' type='submit' > 
     {icon&&<div className='icon'>{icon}</div>}
     Agregar</button>
-    
+  
     </form>
 };

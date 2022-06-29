@@ -82,6 +82,7 @@
  }
 
  .card_title{
+    text-decoration: none;
     background-color: var(--color-header);
     color: var(--color-title);
     font-size:1.2em;
