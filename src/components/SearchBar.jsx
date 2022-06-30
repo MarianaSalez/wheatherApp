@@ -16,7 +16,6 @@ export default function SearchBar({onSearch, icon}) {
     }
   }
 
-  //var city= document.getElementById('inputCity').val()
   return <form className='searchBar' onSubmit={handleOnSearch}>
     <input className='search_input' type='text' id='inputCity' placeholder='Ciudad...'/>
     <button  className='btn_search' type='submit' > 

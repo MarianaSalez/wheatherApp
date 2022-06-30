@@ -4,8 +4,7 @@ import  PropTypes from 'prop-types';
 import style from '../components/styles.module.css';
 
 export default function Cards({cities, onClose}) {
-  // acá va tu código
-  // tip, podés usar un map
+
   return (cities.length===0)?
   <div></div>:
   <div className={style.cards} style={{display: 'flex'}}>

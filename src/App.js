@@ -16,16 +16,10 @@ const API_KEY=process.env.REACT_APP_API_KEY;
 
 function App() {
   const [cities, setCities] = useState([]);
-  //const [city, setCity] = useState({})
 
   function handleAddCity(city){
     if (cities.find(ciudad=>ciudad.id===city.id)) {
       alert("La ciudad ya se encuentra agregada! ")
-    /*setCities((prevCities)=>{
-      prevCities=cities.splice(idx,1)
-      return [city,...prevCities]
-    })*/
-      
     }
     else{
       setCities((prevCities)=>{return[city,...prevCities]})
@@ -42,13 +36,7 @@ function App() {
     
   }
 
-  /*function upDateLastCity(city) {
-    setCity((prevcity)=>{
-      prevcity=city
-      return prevcity
-    }
-    )
-  }*/
+
 
 
   function onSearch(ciudad){
@@ -71,11 +59,7 @@ function App() {
           latitud: recurso.coord.lat,
           longitud: recurso.coord.lon
         }; 
-        /*if(cities.includes(city)) deleteRepeat(city,cities)
-      
-        if (cities.length===5) {
-          setCities((prevCities)=>{return prevCities.shift()})
-        }*/
+   
       handleAddCity(ciudad)
       
       } else {
@@ -83,11 +67,6 @@ function App() {
       }
     });
   }
-
- /* function deleteRepeat(city, cities) {
-    var idx=cities.findIndex(city)
-    setCities(cities.splice(idx,1))
-  }*/
 
 
   return <div className="App">
@@ -98,14 +77,6 @@ function App() {
     <img  className='App-logo' src='https://res.cloudinary.com/dvkvyi1dr/image/upload/v1656542745/weather%20api/69711-reporte_qk0zuq.gif' alt='busquedaCiudad'/>
     </div>
     : <Cards cities={cities} onClose={handleRemoveCity}/>}}/>
-    {/*<Route path='/ciudad/:id' exact render={({match})=>{
-    const city=cities.find((city)=>city.id===parseInt(match.params.id))
-    return  city? <Ciudad city={city} />  
-    : <div>
-      <h1>404- NOT FOUND</h1>
-      <img  className='App-logo' src='https://res.cloudinary.com/dvkvyi1dr/image/upload/v1656542407/weather%20api/91191-404-notfound_b4bkzs.gif' alt='CiudadNoEncontrada'/>
-      </div>
-    }}/>*/}
   <Route path='/ciudad/:id' component={Ciudad}/>
   <Route path='/about' component={About}/>
   
