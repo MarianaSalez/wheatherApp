@@ -23,7 +23,7 @@ function App() {
     }
     else{
       setCities((prevCities)=>{return[city,...prevCities]})
-      console.log(cities)
+     
     }
 
 
@@ -59,6 +59,7 @@ function App() {
           latitud: recurso.coord.lat,
           longitud: recurso.coord.lon
         }; 
+        console.log(ciudad)
    
       handleAddCity(ciudad)
       
