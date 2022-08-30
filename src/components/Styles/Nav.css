@@ -1,0 +1,45 @@
+
+@media (min-width: 576px) { }
+
+
+@media (min-width: 768px) { }
+
+
+@media (min-width: 992px) { }
+
+
+@media (min-width: 1200px) { }
+
+
+@media (min-width: 1400px) { 
+    .NavBar{
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        height: fit-content;
+        align-items:baseline;
+        backdrop-filter: blur(10px);
+        color: var(--color-close);
+        font-size: 0.8em;
+        margin: 5px
+      }
+
+
+
+    .p_link{
+        text-decoration: none;
+        font-size: 1.5vw;
+        display: flex;
+        text-align: center;
+        color: var(--color-close);
+      }
+      .p_link:active {
+        text-decoration: none;
+        color: var(--color-title);
+      }
+ }
+
+
+
+
+
