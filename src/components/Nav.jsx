@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from './SearchBar'
+import './Styles/Nav.css'
 import {FaSearchLocation} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 

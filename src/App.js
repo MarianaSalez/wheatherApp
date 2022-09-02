@@ -74,7 +74,7 @@ function App() {
     
     <Route path='/' render={()=><Nav onSearch={onSearch}/>}/>
     <Route path='/' exact render={()=>{ return (cities.length===0)?<div>
-    <h1> Insert location </h1>
+    <h2> Insert location </h2>
     <img  className='App-logo' src='https://res.cloudinary.com/dvkvyi1dr/image/upload/v1661641295/weather%20api/89600-search-icon-1--unscreen_s4t7f6.gif' alt='busquedaCiudad'/>
     </div>
     : <Cards cities={cities} onClose={handleRemoveCity}/>}}/>
